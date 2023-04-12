@@ -13,6 +13,15 @@ body {
   text-align: center;
 }
 
+/* Header style */
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* The white console container style */
 
 .console-container {
   background-color: #ffffff;
@@ -20,13 +29,16 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 50%;
+  max-width: 1200px; /* Set a maximum width to limit the console container on wide screens */
+  box-sizing: border-box;
 }
 
+/* Console style */
 
-h1 {
+.console-title {
   font-size: 24px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .console {
@@ -35,18 +47,48 @@ h1 {
   font-family: 'Courier New', monospace;
   padding: 16px;
   width: 100%;
-  height: 400px; /* Increase the height of the console field */
+  height: 600px;
   overflow-y: auto;
   border-radius: 5px;
   white-space: pre-wrap;
   box-sizing: border-box;
+  position:relative;
 }
 
-.console-title {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
+.console div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
+
+.console-message {
+  flex-grow: 1;
+  word-wrap: break-word;
+}
+
+/* Timestamp and line number style */
+
+.line-number {
+  color: #ff9900;
+  margin-right: 8px;
+  flex-shrink: 0;
+  text-align: right;
+  width: 40px;
+  min-width: 40px;
+  white-space: nowrap;
+}
+
+.timestamp {
+  color: #66cc66;
+  margin-right: 8px;
+  flex-shrink: 0;
+  text-align: right;
+  width: 80px;
+  min-width: 80px;
+  white-space: nowrap;
+}
+
+/* GitHub link style */
 
 .github-link {
   color: #007bff;
@@ -57,6 +99,8 @@ h1 {
 .github-link:hover {
   color: #0056b3;
 }
+
+/* Refresh button style */
 
 .refresh-button {
   background-color: #007bff;
@@ -75,4 +119,43 @@ h1 {
 
 .refresh-button:hover {
   background-color: #0056b3;
+}
+
+/* Adaptiveness for any device */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .console-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .console-container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .console-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .console {
+    height: 400px;
+  }
+}
+
+/* Increase the width for mobile screens */
+
+@media (max-width: 767px) {
+  .console-container {
+    width: 100%; /* Change this value to increase the width on mobile screens */
+  }
+
+  /* Add padding to the sides for mobile screens */
+  .App {
+    padding: 0 10px;
+  }
 }

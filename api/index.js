@@ -1,4 +1,3 @@
-
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -43,38 +42,3 @@ module.exports = (req, res) => {
     res.status(405).send('Method Not Allowed');
   }
 };
-
-
-
-
-/*
-const { Server } = require('socket.io');
-const express = require('express');
-const app = express();
-const server = require('http').Server(app);
-const io = new Server(server);
-
-
-
-app.use(express.json());
-
-io.on('connection', (socket) => {
-  console.log('A user connected');
-});
-
-app.post('/send', (req, res) => {
-  console.log('Received message:', req.body.message);
-  io.emit('newMessage', req.body.message);
-  res.send('Message received.');
-});
-
-module.exports = (req, res) => {
-  if (req.method === 'POST') {
-    // Handle POST request from the C program
-    app(req, res);
-  } else {
-    // Handle other requests
-    res.status(405).send('Method Not Allowed');
-  }
-};
-*/

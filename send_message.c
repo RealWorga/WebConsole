@@ -32,7 +32,7 @@ void send_message(const char *message) {
 }
 
 int main(void) {
-  const char *message = "{\"message\": \"Hello Mr.Website from the C program! - ELIAS\"}";
+  const char *message = "{\"message\": \"Hello Mr.Website from the C program!\"}";
   send_message(message);
 
   return 0;
