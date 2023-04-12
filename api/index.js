@@ -1,14 +1,10 @@
-/*
+
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors'); // Add this line
 const app = express();
 const server = http.createServer(app);
-
-
-//const server = require('http').Server(app);
-//const io = new Server(server);
 
 const io = new Server(server, {
   cors: {
@@ -21,9 +17,6 @@ const port = 3001;
 app.use(cors()); // Add this line
 app.use(express.json());
 app.use(express.static('public'));
-
-// Rest of the server code remains the same
-
 
 app.post('/send', (req, res) => {
   console.log('Received message:', req.body.message);
@@ -50,15 +43,18 @@ module.exports = (req, res) => {
     res.status(405).send('Method Not Allowed');
   }
 };
-*/
 
-// api/index.js
 
+
+
+/*
 const { Server } = require('socket.io');
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = new Server(server);
+
+
 
 app.use(express.json());
 
@@ -81,3 +77,4 @@ module.exports = (req, res) => {
     res.status(405).send('Method Not Allowed');
   }
 };
+*/

@@ -6,8 +6,8 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    //const socket = io('http://localhost:3001');
-    const socket = io('/');
+    //const socket = io('http://localhost:3002');
+    const socket = io('http://bigunbot.myftp.org:3001');
     socket.on('newMessage', (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
     });

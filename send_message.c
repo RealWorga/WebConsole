@@ -12,7 +12,8 @@ void send_message(const char *message) {
     struct curl_slist *headers = NULL;
     headers = curl_slist_append(headers, "Content-Type: application/json");
 
-    curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:3001/send");
+    curl_easy_setopt(curl, CURLOPT_URL, "http://bigunbot.myftp.org:3001/send");
+
     curl_easy_setopt(curl, CURLOPT_POSTFIELDS, message);
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
@@ -20,7 +21,7 @@ void send_message(const char *message) {
     if (res != CURLE_OK) {
       fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
     } else {
-      printf("Message sent successfully.\n"); // Add this line
+      printf("Message sent successfully.\n");
     }
     
     curl_easy_cleanup(curl);
@@ -31,7 +32,7 @@ void send_message(const char *message) {
 }
 
 int main(void) {
-  const char *message = "{\"message\": \"Hello Mr.Website from the C program!\"}";
+  const char *message = "{\"message\": \"Hello Mr.Website from the C program! - ELIAS\"}";
   send_message(message);
 
   return 0;
