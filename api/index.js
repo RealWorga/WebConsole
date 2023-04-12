@@ -1,7 +1,7 @@
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
-const cors = require('cors'); // Add this line
+const cors = require('cors'); // Add this for local first usage
 const app = express();
 const server = http.createServer(app);
 
@@ -13,7 +13,7 @@ const io = new Server(server, {
 });
 const port = 3001;
 
-app.use(cors()); // Add this line
+//app.use(cors()); // Add for local first usage
 app.use(express.json());
 app.use(express.static('public'));
 
