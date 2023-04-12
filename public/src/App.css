@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+
+.console-container {
+  background-color: #ffffff;
+  border-radius: 50px; /* Increase the border radius for more rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 50%;
+}
+
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.console {
+  background-color: #1e1e1e;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  padding: 16px;
+  width: 100%;
+  height: 400px; /* Increase the height of the console field */
+  overflow-y: auto;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+}
+
+.console-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.github-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.github-link:hover {
+  color: #0056b3;
+}
+
+.refresh-button {
+  background-color: #007bff;
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-button:hover {
+  background-color: #0056b3;
+}
