@@ -53,15 +53,22 @@ h1 {
   white-space: pre-wrap;
   box-sizing: border-box;
   position:relative;
+
+  /* The flex-start or flex-end below does not do anything!!!! */
+  
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start; */
 }
 
 .console div {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+  width: 100%;
 }
 
 .console-message {
+  text-align: left;
   flex-grow: 1;
   word-wrap: break-word;
 }
@@ -80,7 +87,7 @@ h1 {
 
 .timestamp {
   color: #66cc66;
-  margin-right: 8px;
+  margin-right: 50px;
   flex-shrink: 0;
   text-align: right;
   width: 80px;

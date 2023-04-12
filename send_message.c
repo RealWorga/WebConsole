@@ -32,7 +32,7 @@ void send_message(const char *message) {
 }
 
 int main(void) {
-  const char *message = "{\"message\": \"Hello Mr.Website from the C program!\"}";
+  const char *message = "{\"message\": \"Hello Mr.Website from the C program! \\n What is going on? By making these changes, the message content should wrap to a new line when it exceeds the available width, without affecting the timestamp and line number elements.\"}";
   send_message(message);
 
   return 0;

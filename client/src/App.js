@@ -24,13 +24,15 @@ function App() {
   };
   
   /* Auto Scroller functionalities */
-
   const scrollToBottom = () => {
     if (consoleRef.current) {
       const { scrollTop, scrollHeight, clientHeight } = consoleRef.current;
-      const atBottom = scrollHeight - scrollTop - clientHeight < 50; /* This number can be changed for its senstivity */
+      const sensitivity = 20; // Adjust sensitivity pixel vale to fine-tune the auto-scroller
+      const atBottom = scrollHeight - scrollTop - clientHeight <= sensitivity;
       if (atBottom) {
-        consoleRef.current.scrollTop = scrollHeight;
+        setTimeout(() => {
+          consoleRef.current.scrollTop = scrollHeight;
+        }, 100);
       }
     }
   };
